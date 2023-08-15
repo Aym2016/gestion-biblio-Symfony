@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="row">
+{% for livre in livres %}
+        <div class="col-sm-3">
+           <div class="card" style="...">   
+              <img src="{{ asset('couvertures/~livre.image')}}" alt="Card image">
+               <h4 class="card-title">{{livre.titre}}</h4>
+               <p class="card-text"><b>Année:</b>{{livre.annee}}</p>
+               <p class="card-text"><b>Prix:</b><{{livre.prix}}</p>
+               <p class="card-text"><b>Catégorie:</b>{{livre.categorie.id}}</p>
+               <p class="card-text"><b>Auteur:</b>
+
+                   {% for livre in livres %}
+                       {{livre.titre}}
+                   {% endfor%}
+               </p>
+           </div>
+  </div>
+  {{%endfor%}}
+</div>
+<div class="navigation" style="margin: 20px auto; width:300px">
+{{knp_paginator_render(livres)}}
+{% endblock %}

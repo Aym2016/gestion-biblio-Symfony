@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="row">
+{% block title %}Hello DefaultController!{% endblock %}
+        <div class="col-sm-3">
+           <div class="card" style="...">   
+              <img src="{{ asset('couvertures/"~livre.image}}"alt="Card image">
+              <div class="card-body">
+              <h4 class="card-title">{{livre.titre}}</
+              {% for livre in livres %}
+                  {{livre.titre}}
+                  {{}}
+              {% endfor%}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+  <style>
+  label,input{
+      margin-right: 2Opx;
+  }
+  </style>
+<div class="container" style="margin-top: 80px;">
+        <h1>Recherche d'un livre par titre</h1>
+        <form class="form
+        </style>-inline" method="post" action="{{ path('findbytitle') }}">
+        <label for="titre">Entrer le titre du livre :</label>
+            <input type="text" class="form-control" placeholder="Entrer titre" required id="titre" name="titre">
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </form>
+        {%if livres %}
+             <h2>Résultat de recherche avec le titre {{titre}}  </h2>
+             {% for livre in livres %}
+                  {{livre.titre}}
+              {% endfor%}
+              {%elseif etat == true%}
+              <h2>Il 'y n' a aucune résultat correspondant au titre{{titre}}</h2>
+         {%endif%}
+    </div>
+{% endblock %}
